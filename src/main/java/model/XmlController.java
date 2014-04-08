@@ -15,6 +15,7 @@ import java.util.List;
 public class XmlController {
 
     public static ResumeList resumeList; {
+        resumeList = new ResumeList();
         Resume resumeTest = new Resume();
         resumeTest.setName("Jeanne");
         resumeTest.setSurname("D arc");
@@ -25,6 +26,10 @@ public class XmlController {
         resumeList.addResume(resumeTest);
     }
 
+
+    public XmlController() {
+
+    }
     /*@RequestMapping(method = RequestMethod.PUT)
     public @ResponseBody Resume addResumeInXML(Resume resume) {
         resumeList.addResume(resume);
