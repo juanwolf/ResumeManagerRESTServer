@@ -20,6 +20,7 @@ public class XmlController {
         Resume resumeTest = new Resume();
         resumeTest.setName("Jeanne");
         resumeTest.setSurname("D arc");
+        resumeTest.setSkills(new ArrayList<String>());
         resumeTest.setCursus(new ArrayList<String>());
         resumeTest.setItSkills(new ArrayList<String>());
         resumeTest.setLanguages(new ArrayList<String>());

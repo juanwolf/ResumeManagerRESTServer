@@ -25,7 +25,7 @@ public class ResumeList {
         }
         return null;
     }
-
+    
     public List<Resume> getResumeList() {
         return resumeList;
     }
