@@ -25,11 +25,11 @@ public class XmlController {
         resumeList.addResume(resumeTest);
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
+    /*@RequestMapping(method = RequestMethod.PUT)
     public @ResponseBody Resume addResumeInXML(Resume resume) {
         resumeList.addResume(resume);
         return resume;
-    }
+    }*/
 
     @RequestMapping(value="get/{name}", method = RequestMethod.GET)
     public @ResponseBody
