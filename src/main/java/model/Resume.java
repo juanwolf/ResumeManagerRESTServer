@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * <em>Object representation of a resume</em>
  */
-@XmlRootElement
+@XmlRootElement(name = "resume")
 public class Resume {
 
     private String name;
