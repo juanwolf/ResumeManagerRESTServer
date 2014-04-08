@@ -5,7 +5,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 /**
- * Created by juanwolf on 01/04/14.
  * <em>Object representation of a resume</em>
  */
 @XmlRootElement(name="resume")
@@ -24,8 +23,11 @@ public class Resume {
 
     }
 
-    public Resume(String goal, List<String> cursus, List<String> languages,
-                  List<String> skills, List<String> itSkills) {
+    public Resume(String name, String surname, String goal, List<String> cursus,
+                  List<String> languages, List<String> skills,
+                  List<String> itSkills) {
+        this.name = name;
+        this.surname = surname;
         this.goal = goal;
         this.cursus = cursus;
         this.languages = languages;
