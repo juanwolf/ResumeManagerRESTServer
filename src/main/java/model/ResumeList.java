@@ -7,10 +7,10 @@ import java.util.List;
 
 @XmlRootElement(name = "resumeList")
 public class ResumeList {
+
     private List<Resume> resumeList;
 
     public ResumeList(){
-        resumeList = new ArrayList<Resume>();
     }
 
     public ResumeList(List<Resume> resumeList) {
@@ -25,7 +25,7 @@ public class ResumeList {
         }
         return null;
     }
-    
+
     public List<Resume> getResumeList() {
         return resumeList;
     }

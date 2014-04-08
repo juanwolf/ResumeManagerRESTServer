@@ -17,6 +17,7 @@ public class XmlController {
     private static ResumeList resumeList;
     static {
         resumeList = new ResumeList();
+        resumeList.setResumeList(new ArrayList<Resume>());
         Resume resumeTest = new Resume();
         resumeTest.setName("Jeanne");
         resumeTest.setSurname("D arc");
