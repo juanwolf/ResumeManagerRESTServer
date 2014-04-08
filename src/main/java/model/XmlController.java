@@ -14,7 +14,8 @@ import java.util.List;
 @RequestMapping("/*")
 public class XmlController {
 
-    public static ResumeList resumeList; {
+    private static ResumeList resumeList;
+    static {
         resumeList = new ResumeList();
         Resume resumeTest = new Resume();
         resumeTest.setName("Jeanne");
@@ -42,7 +43,7 @@ public class XmlController {
         return resumeList.getResumeByName(name);
     }
 
-    @RequestMapping(value="all", method = RequestMethod.GET)
+    @RequestMapping(value="get/all", method = RequestMethod.GET)
     public @ResponseBody
     ResumeList getResumeInXML() {
         return resumeList;
