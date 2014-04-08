@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/resume")
+@RequestMapping("/*")
 public class XmlController {
 
     public static ResumeList resumeList; {
