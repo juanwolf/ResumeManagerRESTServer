@@ -1,11 +1,11 @@
 package model;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.UnmarshallerHandler;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,11 +34,6 @@ public class XmlController {
     public XmlController() {
 
     }
-    /*@RequestMapping(method = RequestMethod.PUT)
-    public @ResponseBody Resume addResumeInXML(Resume resume) {
-        resumeList.addResume(resume);
-        return resume;
-    }*/
 
     @RequestMapping(value="get/{id}", method = RequestMethod.GET)
     public @ResponseBody
@@ -51,4 +46,11 @@ public class XmlController {
     ResumeList getResumeInXML() {
         return resumeList;
     }
+
+    @RequestMapping(value="/put", method = RequestMethod.PUT)
+    public ResumeList putResume(@RequestBody Resume resume) throws JAXBException {
+        resumeList.addResume(resume);
+        return resumeList;
+    }
+
 }
