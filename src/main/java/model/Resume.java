@@ -21,7 +21,8 @@ public class Resume {
 
 
     public Resume() {
-
+        this.ownId = resumeIndexer;
+        resumeIndexer++;
     }
 
     public Resume(String name, String surname, String goal, List<String> cursus,
@@ -110,3 +111,4 @@ public class Resume {
         this.itSkills = itSkills;
     }
 }
+
