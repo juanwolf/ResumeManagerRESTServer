@@ -11,6 +11,7 @@ public class ResumeList {
     private List<Resume> resumeList;
 
     public ResumeList(){
+        Resume.resumeIndexer = 0;
     }
 
     public ResumeList(List<Resume> resumeList) {
