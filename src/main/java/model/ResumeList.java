@@ -30,12 +30,12 @@ public class ResumeList {
         return resumeList;
     }
 
-    //@XmlElement
+
     public void addResume(Resume resume) {
         resumeList.add(resume);
     }
 
-    @XmlElement
+
     public void setResumeList(List<Resume> resumeList) {
         this.resumeList = resumeList;
     }
