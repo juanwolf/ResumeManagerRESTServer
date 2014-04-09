@@ -10,7 +10,7 @@ import java.util.List;
 public class ResumeTest {
 
     @Test
-    public void ConstructorEmptyCreateAResumeWithoutName() {
+    public void EmptyConstructorCreateAResumeWithoutName() {
         // Given
         // When
         Resume resume = new Resume();
@@ -19,7 +19,7 @@ public class ResumeTest {
     }
 
     @Test
-    public void ConstructorEmptyCreateAResumeWithoutSurname() {
+    public void EmptyConstructorCreateAResumeWithoutSurname() {
         // Given
         // When
         Resume resume = new Resume();
@@ -28,7 +28,7 @@ public class ResumeTest {
     }
 
     @Test
-    public void ConstructorEmptyCreateAResumeWithoutGoal() {
+    public void EmptyConstructorCreateAResumeWithoutGoal() {
         // Given
         // When
         Resume resume = new Resume();
@@ -37,7 +37,7 @@ public class ResumeTest {
     }
 
     @Test
-    public void ConstructorEmptyCreateAResumeWithoutCursus() {
+    public void EmptyConstructorCreateAResumeWithoutCursus() {
         // Given
         // When
         Resume resume = new Resume();
@@ -46,7 +46,7 @@ public class ResumeTest {
     }
 
     @Test
-    public void ConstructorEmptyCreateAResumeWithoutLanguages() {
+    public void EmptyConstructorCreateAResumeWithoutLanguages() {
         // Given
         // When
         Resume resume = new Resume();
@@ -55,7 +55,7 @@ public class ResumeTest {
     }
 
     @Test
-    public void ConstructorEmptyCreateAResumeWithoutSkill() {
+    public void EmptyConstructorCreateAResumeWithoutSkill() {
         // Given
         // When
         Resume resume = new Resume();
@@ -64,7 +64,7 @@ public class ResumeTest {
     }
 
     @Test
-    public void ConstructorEmptyCreateAResumeWithoutITSkill() {
+    public void EmptyConstructorCreateAResumeWithoutITSkill() {
         // Given
         // When
         Resume resume = new Resume();
@@ -73,7 +73,7 @@ public class ResumeTest {
     }
 
     @Test
-    public void ConstructorEmptyCreateAResumeWithAnPositiveId() {
+    public void EmptyConstructorCreateAResumeWithAnPositiveId() {
         // Given
         // When
         Resume resume = new Resume();
@@ -83,7 +83,7 @@ public class ResumeTest {
     }
 
     @Test
-    public void TwoEmptyResumeHaveADifferentID() {
+    public void TwoEmptiesResumesHaveADifferentID() {
         // Given
         // When
         Resume resume = new Resume();
