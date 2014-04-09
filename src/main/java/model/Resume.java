@@ -39,7 +39,7 @@ public class Resume {
         return name;
     }
 
-    @XmlElement
+
     public void setName(String name) {
         this.name = name;
     }
@@ -48,7 +48,7 @@ public class Resume {
         return surname;
     }
 
-    @XmlElement
+
     public void setSurname(String surname) {
         this.surname = surname;
     }
@@ -57,7 +57,8 @@ public class Resume {
     public String getGoal() {
         return goal;
     }
-    @XmlElement
+
+
     public void setGoal(String goal) {
         this.goal = goal;
     }
@@ -66,7 +67,7 @@ public class Resume {
         return cursus;
     }
 
-    @XmlElement
+
     public void setCursus(List<String> cursus) {
         this.cursus = cursus;
     }
@@ -75,7 +76,7 @@ public class Resume {
         return languages;
     }
 
-    @XmlElement
+
     public void setLanguages(List<String> languages) {
         this.languages = languages;
     }
@@ -84,7 +85,7 @@ public class Resume {
         return skills;
     }
 
-    @XmlElement
+
     public void setSkills(List<String> skills) {
         this.skills = skills;
     }
@@ -93,7 +94,7 @@ public class Resume {
         return itSkills;
     }
 
-    @XmlElement
+
     public void setItSkills(List<String> itSkills) {
         this.itSkills = itSkills;
     }
