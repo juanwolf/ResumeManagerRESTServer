@@ -30,7 +30,7 @@ public class ResumeList {
         return resumeList;
     }
 
-    @XmlElement
+    //@XmlElement
     public void addResume(Resume resume) {
         resumeList.add(resume);
     }

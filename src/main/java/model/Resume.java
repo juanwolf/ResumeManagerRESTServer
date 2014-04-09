@@ -65,6 +65,7 @@ public class Resume {
     public List<String> getCursus() {
         return cursus;
     }
+
     @XmlElement
     public void setCursus(List<String> cursus) {
         this.cursus = cursus;
