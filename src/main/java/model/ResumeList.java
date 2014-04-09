@@ -15,11 +15,12 @@ public class ResumeList {
 
     public ResumeList(List<Resume> resumeList) {
         this.resumeList = resumeList;
+        Resume.resumeIndexer = resumeList.size();
     }
 
-    public Resume getResumeByName(String Name) {
+    public Resume getResumeById(int id) {
         for(Resume r : resumeList) {
-            if (r.getName().equals(Name)) {
+            if (r.getId() == id) {
                 return r;
             }
         }

@@ -9,7 +9,8 @@ import java.util.List;
  */
 @XmlRootElement(name = "resume")
 public class Resume {
-
+    public static int resumeIndexer;
+    private int ownId;
     private String name;
     private String surname;
     private String goal;
@@ -26,6 +27,7 @@ public class Resume {
     public Resume(String name, String surname, String goal, List<String> cursus,
                   List<String> languages, List<String> skills,
                   List<String> itSkills) {
+        this.ownId = resumeIndexer;
         this.name = name;
         this.surname = surname;
         this.goal = goal;
@@ -33,6 +35,15 @@ public class Resume {
         this.languages = languages;
         this.skills = skills;
         this.itSkills = itSkills;
+        resumeIndexer++;
+    }
+
+    public int getId() {
+        return ownId;
+    }
+
+    public void setId(int newId) {
+        this.ownId = newId;
     }
 
     public String getName() {

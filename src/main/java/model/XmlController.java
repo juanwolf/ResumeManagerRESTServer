@@ -19,6 +19,7 @@ public class XmlController {
         resumeList = new ResumeList();
         resumeList.setResumeList(new ArrayList<Resume>());
         Resume resumeTest = new Resume();
+        resumeTest.setId(1);
         resumeTest.setName("Jeanne");
         resumeTest.setSurname("D arc");
         resumeTest.setSkills(new ArrayList<String>());
@@ -39,10 +40,10 @@ public class XmlController {
         return resume;
     }*/
 
-    @RequestMapping(value="get/{name}", method = RequestMethod.GET)
+    @RequestMapping(value="get/{id}", method = RequestMethod.GET)
     public @ResponseBody
-    Resume getResumeInXML(@PathVariable String name) {
-        return resumeList.getResumeByName(name);
+    Resume getResumeInXML(@PathVariable int id) {
+        return resumeList.getResumeById(id);
     }
 
     @RequestMapping(value="get/all", method = RequestMethod.GET)
