@@ -35,20 +35,21 @@ public class XmlController {
 
     }
 
-    @RequestMapping(value="get/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="/{id}", method = RequestMethod.GET)
     public @ResponseBody
     Resume getResumeInXML(@PathVariable int id) {
         return resumeList.getResumeById(id);
     }
 
-    @RequestMapping(value="get/all", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
     ResumeList getResumeInXML() {
         return resumeList;
     }
 
-    @RequestMapping(value="/put", method = RequestMethod.PUT)
-    public ResumeList putResume(@RequestBody Resume resume) throws JAXBException {
+    @RequestMapping(method = RequestMethod.PUT)
+    public @ResponseBody
+    ResumeList putResume(@RequestBody Resume resume) {
         resumeList.addResume(resume);
         return resumeList;
     }
