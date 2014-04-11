@@ -1,12 +1,17 @@
 package model;
 
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.UnmarshallerHandler;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 
@@ -48,10 +53,23 @@ public class XmlController {
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public @ResponseBody
-    ResumeList putResume(@RequestBody Resume resume) {
+    public ResponseEntity<String> putResume(@RequestBody Resume resume, HttpServletRequest request) {
         resumeList.addResume(resume);
-        return resumeList;
+        HttpHeaders responseHeaders = new HttpHeaders();
+
+        Enumeration headerNames = request.getHeaderNames();
+        while(headerNames.hasMoreElements()){
+            String nextElement = (String)headerNames.nextElement();
+            System.out.println(nextElement + "=" + request.getHeaders(nextElement));
+            responseHeaders.set(nextElement, request.getHeader(nextElement));
+        }
+
+
+        //populating the header required for CORS
+        responseHeaders.set("Access-Control-Allow-Origin", "*");
+
+
+        return new ResponseEntity<String>(resumeList.toString(), responseHeaders, HttpStatus.OK);
     }
 
 }
