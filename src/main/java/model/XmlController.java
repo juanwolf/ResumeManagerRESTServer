@@ -53,23 +53,10 @@ public class XmlController {
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public ResponseEntity<String> putResume(@RequestBody Resume resume, HttpServletRequest request) {
+    public @ResponseBody ResumeList
+    putResume(@RequestBody Resume resume, HttpServletRequest request) {
         resumeList.addResume(resume);
-        HttpHeaders responseHeaders = new HttpHeaders();
-
-        Enumeration headerNames = request.getHeaderNames();
-        while(headerNames.hasMoreElements()){
-            String nextElement = (String)headerNames.nextElement();
-            System.out.println(nextElement + "=" + request.getHeaders(nextElement));
-            responseHeaders.set(nextElement, request.getHeader(nextElement));
-        }
-
-
-        //populating the header required for CORS
-        responseHeaders.set("Access-Control-Allow-Origin", "*");
-
-
-        return new ResponseEntity<String>(resumeList.toString(), responseHeaders, HttpStatus.OK);
+        return resumeList;
     }
 
 }
