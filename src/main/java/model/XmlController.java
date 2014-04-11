@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.UnmarshallerHandler;
+import javax.xml.ws.ResponseWrapper;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -35,6 +36,14 @@ public class XmlController {
         resumeList.addResume(resumeTest);
     }
 
+    /**
+     * Tools for build header.
+     */
+    private HttpHeaders addAccessControllAllowOrigin() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Access-Control-Allow-Origin", "*");
+        return headers;
+    }
 
     public XmlController() {
 
@@ -53,10 +62,13 @@ public class XmlController {
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public @ResponseBody ResumeList
+    public ResponseEntity<ResumeList>
     putResume(@RequestBody Resume resume, HttpServletRequest request) {
         resumeList.addResume(resume);
-        return resumeList;
+        ResponseEntity<ResumeList> responseEntity =
+                new ResponseEntity<ResumeList>(addAccessControllAllowOrigin(),
+                                                HttpStatus.OK);
+        return responseEntity;
     }
 
 }
