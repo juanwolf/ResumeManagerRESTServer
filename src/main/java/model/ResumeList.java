@@ -12,7 +12,7 @@ public class ResumeList {
 
     @XmlElementWrapper
     @XmlElement(name = "resume")
-    private List<Resume> resumeList;
+    protected List<Resume> resumeList;
 
     public ResumeList(){
         Resume.resumeIndexer = 0;
@@ -33,13 +33,11 @@ public class ResumeList {
     }
 
     public void addResume(Resume resume) {
+        if (resume.getId() < Resume.resumeIndexer) {
+            resume.setId(Resume.resumeIndexer);
+        }
         resumeList.add(resume);
+        Resume.resumeIndexer++;
     }
-
-
-    public void setResumeList(List<Resume> resumeList) {
-        this.resumeList = resumeList;
-    }
-
 
 }

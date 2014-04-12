@@ -17,15 +17,15 @@ public class ResumeController {
     private static ResumeList resumeList;
     static {
         resumeList = new ResumeList();
-        resumeList.setResumeList(new ArrayList<Resume>());
+        resumeList.resumeList = new ArrayList<Resume>();
         Resume resumeTest = new Resume();
         resumeTest.setId(1);
         resumeTest.setName("Jeanne");
         resumeTest.setSurname("D arc");
-        resumeTest.setSkills(new ArrayList<String>());
-        resumeTest.setAttended(new ArrayList<String>());
-        resumeTest.setItSkills(new ArrayList<String>());
-        resumeTest.setLanguages(new ArrayList<String>());
+        resumeTest.skills = new ArrayList<String>();
+        resumeTest.attended = new ArrayList<String>();
+        resumeTest.itSkills = new ArrayList<String>();
+        resumeTest.languages = new ArrayList<String>();
         resumeTest.setGoal("Arriver jusqu'à Rouen");
         resumeList.addResume(resumeTest);
     }

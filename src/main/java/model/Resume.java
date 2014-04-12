@@ -18,19 +18,19 @@ public class Resume {
 
     @XmlElementWrapper(name = "attended")
     @XmlElement(name = "institution")
-    private List<String> attended;
+    protected List<String> attended;
 
     @XmlElementWrapper(name = "languages")
     @XmlElement(name = "language")
-    private List<String> languages;
+    protected List<String> languages;
 
     @XmlElementWrapper(name = "skills")
     @XmlElement(name = "skill")
-    private List<String> skills;
+    protected List<String> skills;
 
     @XmlElementWrapper(name = "ITSkills")
     @XmlElement(name = "ITSkill")
-    private List<String> itSkills;
+    protected List<String> itSkills;
 
 
     public Resume() {
@@ -88,26 +88,5 @@ public class Resume {
         this.goal = goal;
     }
 
-
-    public void setAttended(List<String> attended) {
-        this.attended = attended;
-    }
-
-    public List<String> getLanguages() {
-        return languages;
-    }
-
-
-    public void setLanguages(List<String> languages) {
-        this.languages = languages;
-    }
-
-    public void setSkills(List<String> skills) {
-        this.skills = skills;
-    }
-
-    public void setItSkills(List<String> itSkills) {
-        this.itSkills = itSkills;
-    }
 }
 
