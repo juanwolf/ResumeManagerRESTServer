@@ -44,15 +44,20 @@ public class ResumeController {
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
-    public @ResponseBody
-    Resume getResume(@PathVariable int id) {
-        return resumeList.getResumeById(id);
+    public ResponseEntity<Resume> getResume(@PathVariable int id) {
+        ResponseEntity<Resume> responseEntity =
+                new ResponseEntity<Resume>(resumeList.getResumeById(id),
+                        addAccessControllAllowOrigin(),
+                        HttpStatus.OK);
+        return responseEntity;
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public @ResponseBody
-    ResumeList getResumes() {
-        return resumeList;
+    public ResponseEntity<ResumeList> getResumes() {
+        ResponseEntity<ResumeList> responseEntity =
+                new ResponseEntity<ResumeList>(resumeList, addAccessControllAllowOrigin(),
+                        HttpStatus.OK);
+        return responseEntity;
     }
 
     @RequestMapping(method = RequestMethod.PUT)
