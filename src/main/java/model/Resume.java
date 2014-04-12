@@ -1,6 +1,5 @@
 package model;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class Resume {
     private String name;
     private String surname;
     private String goal;
-    private List<String> cursus;
+    private List<String> attented;
     private List<String> languages;
     private List<String> skills;
     private List<String> itSkills;
@@ -25,14 +24,14 @@ public class Resume {
         resumeIndexer++;
     }
 
-    public Resume(String name, String surname, String goal, List<String> cursus,
+    public Resume(String name, String surname, String goal, List<String> attented,
                   List<String> languages, List<String> skills,
                   List<String> itSkills) {
         this.ownId = resumeIndexer;
         this.name = name;
         this.surname = surname;
         this.goal = goal;
-        this.cursus = cursus;
+        this.attented = attented;
         this.languages = languages;
         this.skills = skills;
         this.itSkills = itSkills;
@@ -75,13 +74,13 @@ public class Resume {
         this.goal = goal;
     }
 
-    public List<String> getCursus() {
-        return cursus;
+    public List<String> getAttented() {
+        return attented;
     }
 
 
-    public void setCursus(List<String> cursus) {
-        this.cursus = cursus;
+    public void setAttented(List<String> attented) {
+        this.attented = attented;
     }
 
     public List<String> getLanguages() {

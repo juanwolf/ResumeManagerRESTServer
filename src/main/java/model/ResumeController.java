@@ -7,18 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.UnmarshallerHandler;
-import javax.xml.ws.ResponseWrapper;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
 
 
 @Controller
 @RequestMapping("/*")
-public class XmlController {
+public class ResumeController {
 
     private static ResumeList resumeList;
     static {
@@ -29,7 +23,7 @@ public class XmlController {
         resumeTest.setName("Jeanne");
         resumeTest.setSurname("D arc");
         resumeTest.setSkills(new ArrayList<String>());
-        resumeTest.setCursus(new ArrayList<String>());
+        resumeTest.setAttented(new ArrayList<String>());
         resumeTest.setItSkills(new ArrayList<String>());
         resumeTest.setLanguages(new ArrayList<String>());
         resumeTest.setGoal("Arriver jusqu'à Rouen");
@@ -45,19 +39,19 @@ public class XmlController {
         return headers;
     }
 
-    public XmlController() {
+    public ResumeController() {
 
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
     public @ResponseBody
-    Resume getResumeInXML(@PathVariable int id) {
+    Resume getResume(@PathVariable int id) {
         return resumeList.getResumeById(id);
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
-    ResumeList getResumeInXML() {
+    ResumeList getResumes() {
         return resumeList;
     }
 
