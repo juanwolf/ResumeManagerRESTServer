@@ -10,7 +10,7 @@ import java.util.List;
 @XmlRootElement
 public class ResumeList {
 
-    @XmlElementWrapper(name = "ResumeList")
+    @XmlElementWrapper
     @XmlElement(name = "resume")
     private List<Resume> resumeList;
 
@@ -35,7 +35,6 @@ public class ResumeList {
     public List<Resume> getResumeList() {
         return resumeList;
     }
-
 
     public void addResume(Resume resume) {
         resumeList.add(resume);
