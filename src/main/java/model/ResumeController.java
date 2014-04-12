@@ -23,7 +23,7 @@ public class ResumeController {
         resumeTest.setName("Jeanne");
         resumeTest.setSurname("D arc");
         resumeTest.setSkills(new ArrayList<String>());
-        resumeTest.setAttented(new ArrayList<String>());
+        resumeTest.setAttended(new ArrayList<String>());
         resumeTest.setItSkills(new ArrayList<String>());
         resumeTest.setLanguages(new ArrayList<String>());
         resumeTest.setGoal("Arriver jusqu'à Rouen");

@@ -42,7 +42,7 @@ public class ResumeTest {
         // When
         Resume resume = new Resume();
         // Then
-        Assertions.assertThat(resume.getAttented()).isNull();
+        Assertions.assertThat(resume.getAttended()).isNull();
     }
 
     @Test
@@ -137,9 +137,9 @@ public class ResumeTest {
         Resume resume = new Resume(null, null, null, cursus, null,
                 null, null);
         // Then
-        Assertions.assertThat(resume.getAttented()).isNotNull();
-        Assertions.assertThat(resume.getAttented().isEmpty()).isFalse();
-        Assertions.assertThat(resume.getAttented().get(0)).isEqualTo(cursus.get(0));
+        Assertions.assertThat(resume.getAttended()).isNotNull();
+        Assertions.assertThat(resume.getAttended().isEmpty()).isFalse();
+        Assertions.assertThat(resume.getAttended().get(0)).isEqualTo(cursus.get(0));
     }
 
     @Test

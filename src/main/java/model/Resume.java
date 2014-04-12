@@ -1,5 +1,7 @@
 package model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
@@ -13,9 +15,20 @@ public class Resume {
     private String name;
     private String surname;
     private String goal;
-    private List<String> attented;
+    @XmlElementWrapper(name = "attended")
+    @XmlElement(name = "institution")
+    private List<String> attended;
+
+    @XmlElementWrapper(name = "languages")
+    @XmlElement(name = "language")
     private List<String> languages;
+
+    @XmlElementWrapper(name = "skills")
+    @XmlElement(name = "skill")
     private List<String> skills;
+
+    @XmlElementWrapper(name = "ITSkills")
+    @XmlElement(name = "ITSkill")
     private List<String> itSkills;
 
 
@@ -24,14 +37,14 @@ public class Resume {
         resumeIndexer++;
     }
 
-    public Resume(String name, String surname, String goal, List<String> attented,
+    public Resume(String name, String surname, String goal, List<String> attended,
                   List<String> languages, List<String> skills,
                   List<String> itSkills) {
         this.ownId = resumeIndexer;
         this.name = name;
         this.surname = surname;
         this.goal = goal;
-        this.attented = attented;
+        this.attended = attended;
         this.languages = languages;
         this.skills = skills;
         this.itSkills = itSkills;
@@ -74,13 +87,13 @@ public class Resume {
         this.goal = goal;
     }
 
-    public List<String> getAttented() {
-        return attented;
+    public List<String> getAttended() {
+        return attended;
     }
 
 
-    public void setAttented(List<String> attented) {
-        this.attented = attented;
+    public void setAttended(List<String> attended) {
+        this.attended = attended;
     }
 
     public List<String> getLanguages() {
