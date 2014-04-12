@@ -10,7 +10,6 @@ import java.util.List;
 @XmlRootElement
 public class ResumeList {
 
-    @XmlElementWrapper
     @XmlElement(name = "resume")
     protected List<Resume> resumeList;
 

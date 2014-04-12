@@ -3,12 +3,15 @@ package model;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.List;
 
 /**
  * <em>Object representation of a resume</em>
  */
 @XmlRootElement(name = "resume")
+@XmlType(propOrder = {"id", "name", "surname",
+        "goal", "attended", "languages", "skills", "itSkills"})
 public class Resume {
     public static int resumeIndexer;
     private int ownId;
