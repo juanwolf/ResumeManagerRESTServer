@@ -42,7 +42,7 @@ public class ResumeTest {
         // When
         Resume resume = new Resume();
         // Then
-        Assertions.assertThat(resume.getAttended()).isNull();
+        Assertions.assertThat(resume.attended).isNull();
     }
 
     @Test
@@ -51,7 +51,7 @@ public class ResumeTest {
         // When
         Resume resume = new Resume();
         // Then
-        Assertions.assertThat(resume.getLanguages()).isNull();
+        Assertions.assertThat(resume.languages).isNull();
     }
 
     @Test
@@ -60,7 +60,7 @@ public class ResumeTest {
         // When
         Resume resume = new Resume();
         // Then
-        Assertions.assertThat(resume.getSkills()).isNull();
+        Assertions.assertThat(resume.skills).isNull();
     }
 
     @Test
@@ -69,7 +69,7 @@ public class ResumeTest {
         // When
         Resume resume = new Resume();
         // Then
-        Assertions.assertThat(resume.getItSkills()).isNull();
+        Assertions.assertThat(resume.itSkills).isNull();
     }
 
     @Test
@@ -137,9 +137,9 @@ public class ResumeTest {
         Resume resume = new Resume(null, null, null, cursus, null,
                 null, null);
         // Then
-        Assertions.assertThat(resume.getAttended()).isNotNull();
-        Assertions.assertThat(resume.getAttended().isEmpty()).isFalse();
-        Assertions.assertThat(resume.getAttended().get(0)).isEqualTo(cursus.get(0));
+        Assertions.assertThat(resume.attended).isNotNull();
+        Assertions.assertThat(resume.attended.isEmpty()).isFalse();
+        Assertions.assertThat(resume.attended.get(0)).isEqualTo(cursus.get(0));
     }
 
     @Test
@@ -151,10 +151,10 @@ public class ResumeTest {
         Resume resume = new Resume(null, null, null, null, languages,
                 null, null);
         // Then
-        Assertions.assertThat(resume.getLanguages()).isNotNull();
-        Assertions.assertThat(resume.getLanguages().isEmpty())
+        Assertions.assertThat(resume.languages).isNotNull();
+        Assertions.assertThat(resume.languages.isEmpty())
                 .isFalse();
-        Assertions.assertThat(resume.getLanguages().get(0))
+        Assertions.assertThat(resume.languages.get(0))
                 .isEqualTo(languages.get(0));
     }
 
@@ -167,9 +167,9 @@ public class ResumeTest {
         Resume resume = new Resume(null, null, null, null, null,
                 skills, null);
         // Then
-        Assertions.assertThat(resume.getSkills()).isNotNull();
-        Assertions.assertThat(resume.getSkills().isEmpty()).isFalse();
-        Assertions.assertThat(resume.getSkills().get(0)).isEqualTo(skills.get(0));
+        Assertions.assertThat(resume.skills).isNotNull();
+        Assertions.assertThat(resume.skills.isEmpty()).isFalse();
+        Assertions.assertThat(resume.skills.get(0)).isEqualTo(skills.get(0));
     }
 
     @Test
@@ -181,9 +181,9 @@ public class ResumeTest {
         Resume resume = new Resume(null, null, null, null, null,
                 null, itSkills);
         // Then
-        Assertions.assertThat(resume.getItSkills()).isNotNull();
-        Assertions.assertThat(resume.getItSkills().isEmpty()).isFalse();
-        Assertions.assertThat(resume.getItSkills().get(0))
+        Assertions.assertThat(resume.itSkills).isNotNull();
+        Assertions.assertThat(resume.itSkills.isEmpty()).isFalse();
+        Assertions.assertThat(resume.itSkills.get(0))
                 .isEqualTo(itSkills.get(0));
     }
 

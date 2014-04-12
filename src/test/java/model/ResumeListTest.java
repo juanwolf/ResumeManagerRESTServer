@@ -15,7 +15,7 @@ public class ResumeListTest {
         // When
         ResumeList resumeList = new ResumeList();
         // Then
-        Assertions.assertThat(resumeList.getResumeList())
+        Assertions.assertThat(resumeList.resumeList)
                 .isNull();
 
     }
@@ -28,7 +28,7 @@ public class ResumeListTest {
         // When
         ResumeList resumeList = new ResumeList(resumes);
         // Then
-        Assertions.assertThat(resumeList.getResumeList()).isEqualTo(resumes);
+        Assertions.assertThat(resumeList.resumeList).isEqualTo(resumes);
     }
 
     @Test
