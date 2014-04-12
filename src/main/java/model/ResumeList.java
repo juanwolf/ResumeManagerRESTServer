@@ -7,9 +7,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name="ResumeList")
+@XmlRootElement
 public class ResumeList {
-    @XmlElementWrapper(name="resumes")
+
+    @XmlElementWrapper
     @XmlElement(name = "resume")
     private List<Resume> resumeList;
 
@@ -29,10 +30,6 @@ public class ResumeList {
             }
         }
         return null;
-    }
-
-    public List<Resume> getResumeList() {
-        return resumeList;
     }
 
     public void addResume(Resume resume) {

@@ -15,6 +15,7 @@ public class Resume {
     private String name;
     private String surname;
     private String goal;
+
     @XmlElementWrapper(name = "attended")
     @XmlElement(name = "institution")
     private List<String> attended;
@@ -87,10 +88,6 @@ public class Resume {
         this.goal = goal;
     }
 
-    public List<String> getAttended() {
-        return attended;
-    }
-
 
     public void setAttended(List<String> attended) {
         this.attended = attended;
@@ -105,19 +102,9 @@ public class Resume {
         this.languages = languages;
     }
 
-    public List<String> getSkills() {
-        return skills;
-    }
-
-
     public void setSkills(List<String> skills) {
         this.skills = skills;
     }
-
-    public List<String> getItSkills() {
-        return itSkills;
-    }
-
 
     public void setItSkills(List<String> itSkills) {
         this.itSkills = itSkills;
