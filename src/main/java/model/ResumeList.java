@@ -36,7 +36,6 @@ public class ResumeList {
             resume.setId(Resume.resumeIndexer);
         }
         resumeList.add(resume);
-        Resume.resumeIndexer++;
     }
 
 }
