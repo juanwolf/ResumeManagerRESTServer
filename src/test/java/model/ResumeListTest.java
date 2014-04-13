@@ -36,12 +36,11 @@ public class ResumeListTest {
         // Given
         ResumeList resumeList = new ResumeList(new ArrayList<Resume>());
         Resume resume = new Resume();
-        resume.setId(-1);
 
         // When
         resumeList.addResume(resume);
         // Then
-        Assertions.assertThat(resume.getId()).isEqualTo(Resume.resumeIndexer-1);
+        Assertions.assertThat(resume.getId()).isEqualTo(Resume.resumeIndexer);
     }
 
     @Test
